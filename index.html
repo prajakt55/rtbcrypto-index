@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto UI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        #coupon{
+            border-style: dotted;
+            width:fit-content;
+            font-size: 12px;
+        }
+        button{
+            height: fit-content;
+            color: white;
+            font-size: 12px;
+        }
+        .footer{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            /* text-align: center; */
+        }
+        table{
+            border-collapse: separate;
+            border-spacing: 0 5px;
+        }
+    </style>
+</head>
+<body>
+   <div  class=" text-center " style="background: #e2e6ff; border-bottom-left-radius:10px ;border-bottom-right-radius:10px ;">
+      <h3 class="mx-md-n6" style="padding-top: 40px;">Coin Watch</h4>
+      <h5 style="padding-bottom: 20px;">By Coin<span style="color: red; font-weight: bold;">DCX</span> </h5>
+    </div>
+    
+    
+
+    <!-- <div id="div1">
+    <p ></p>
+</div> -->
+
+   <div class="container ">
+       
+    <table id="myTable" class="table text-center mt-3">
+        <thead>
+            <tr style="background: orangered; color: white;">
+              <!-- <th scope="col">#</th> -->
+              <th scope="col">Coinname</th>
+              <th scope="col">price</th>
+              <th scope="col">Change</th>
+            </tr>
+          </thead>
+        <!-- <tr>
+          <td>Row1 cell1</td>
+          <td>Row1 cell2</td>
+        </tr>
+        <tr>
+          <td>Row2 cell1</td>
+          <td>Row2 cell2</td>
+        </tr>
+        <tr>
+          <td>Row3 cell1</td>
+          <td>Row3 cell2</td>
+        </tr> -->
+      </table>
+    </div> 
+
+    <div class="text-center">
+        <a href=""><i class="fa-solid fa-arrows-rotate"></i></a>
+    </div>
+ 
+   <div class="footer" style="background: #e2e6ff; padding-bottom: 10px;border-top-left-radius:10px ;border-top-right-radius:10px ;"">
+    <div class="row " style="padding: 10px;">
+        <div class=" col-8 ">
+            <h6>GET SAMPLE BITCOIN WORTH 100*</h5>
+                <div style="display: flex;">
+
+                    <p id="coupon">Use Code: COIN100</p>&nbsp&nbsp
+                    <button style="background: orangered; text-overflow: ellipsis;">INSTALL NOW</button>
+                </div>
+
+                <P style="font-size: 0.8rem;color: grey;">Cryptocurrency is an unregulated digital currency not a legal tender and subject to market risks Terms & Condition of the Exchange apply</P> 
+        </div>
+        <div class="col-4">
+            <h2 styl> Coin<span style="color: red; font-weight: bold;">DCX</span> </h5>
+
+        </div>
+      </div>
+                   
+                   <!-- <div class="row no-gutters container">
+                       <div class="col-12 col-sm-6 col-md-8 ">
+                            <div style="display: flex; justify-content:space-evenly;" >
+                                
+                            </div>   
+                            
+                        </div>
+                        <div class="col-6 col-md-4">
+            
+        </div> -->
+      </div>
+      
+        
+      
+    </div>
+    <script>
+    //    var userd = document.querySelector(".box")
+       var userdata = [
+           {coinlogo:'<i class="fa-brands fa-bitcoin"></i>' ,CoinName: "MATIC" ,currency:"/INR", price:"188.004" , Change:"+1.1%"},
+           {coinlogo:'<i class="fa-brands fa-bitcoin"></i>' ,CoinName: "SAND" ,currency:"/INR", price:"387.3" , Change:"+3.4"},
+           {coinlogo:'<i class="fa-brands fa-bitcoin"></i>' ,CoinName: "SOL" ,currency:"/INR", price:"11,242.01" , Change:"+2.3"},
+           {coinlogo:'<i class="fa-brands fa-ethereum"></i>' ,CoinName: "ETH" ,currency:"/INR", price:"2,59,044.21" , Change:"+7.5"},
+           {coinlogo:'<i class="fa-brands fa-bitcoin"></i>' ,CoinName: "BTC" ,currency:"/INR", price:"34,26,848.74" , Change:"+8.4"}
+       ]
+
+       var cnt = 0;
+     userdata.map(user => {
+         cnt++;
+        //  console.log(cnt)
+        const table = document.getElementById("myTable");
+        var btn = document.createElement("button");
+        var row = table.insertRow(1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        cell1.innerHTML = `${user.coinlogo} ${user.CoinName} ${user.currency}`;
+        // cell1.innerHTML = `${'i'}`
+        if(cnt%2==0){
+            row.style.background = "#DCDCDC	"
+        }
+        cell2.innerHTML = `${user.price}`;
+        cell3.innerHTML = `${user.Change}`;
+        cell3.style.color = "green";
+        cell3.style.border = "0.2px solid";
+        // cell3.style.border.width = "0.2px solid";
+
+       
+       })
+
+   </script>
+</body>
+</html>
